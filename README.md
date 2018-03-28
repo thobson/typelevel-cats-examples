@@ -45,3 +45,16 @@ Left **or** the future fails
 An example of MonadError usage can be found [here](src/main/scala/uk/co/tobyhobson/MonadErrors.scala)
 
 Check out the supporting blog post [here](https://www.tobyhobson.co.uk/monad-error/)
+
+#### Applicatives
+
+`Monads` are prevalent in the scala world. Think of `Future's flatMap()`. New developers often use Monads along with
+for comprehension to perform multiple independent operations but this is not what Monad's are designed for. `Applicatives`
+are the go to tool for performing **multiple independent** operations.
+
+See an example of calling multiple external services in parallel using Applicatives [here](src/main/scala/uk/co/tobyhobson/ApplicativeFutures.scala)
+
+An example of form style validation can be found [here](src/main/scala/uk/co/tobyhobson/ApplicativeValidation.scala)
+
+Check out the supporting blog post [here](https://www.tobyhobson.co.uk/applicatives-vs-monads/)
+
