@@ -1,7 +1,7 @@
 ## Code samples
 
 My [blog](https://www.tobyhobson.co.uk/) covers various Scala related topics mostly around functional programming. 
-Here are some code examples ********illustrating the ideas I describe in my blog. Check out my blog to find out more:
+Here are some code examples illustrating the ideas I describe in my blog. Check out my blog to find out more:
 
 **[www.tobyhobson.co.uk](https://www.tobyhobson.co.uk/)**
 
