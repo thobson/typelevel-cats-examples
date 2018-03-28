@@ -35,3 +35,13 @@ Examples of monad transformers (OptionT and EitherT) including workarounds for v
 
 Check out the supporting blog posts [here](https://www.tobyhobson.co.uk/what-is-a-monad/) 
 and [here](https://www.tobyhobson.co.uk/scala-monad-transformers/)
+
+#### MonadError
+
+We can use a MonadTransformer to wrap `Future[Either[L, R]]` then map the left and right projections. But what happens if
+the underlying future fails? `MonadError` allows us to map the left projection if the underlying future holds a 
+Left **or** the future fails
+
+An example of MonadError usage can be found [here](src/main/scala/uk/co/tobyhobson/MonadErrors.scala)
+
+Check out the supporting blog post [here](https://www.tobyhobson.co.uk/monad-error/)

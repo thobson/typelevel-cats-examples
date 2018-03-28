@@ -18,7 +18,7 @@ object Typeclasses {
     def drive(a: A): String
   }
 
-  // Implementations for cars, busses and tanks
+  // Type class implementations for cars, busses and tanks
   implicit val vehicleLikeCar = new VehicleLike[Car] {
     override def drive(car: Car): String = s"driving a ${car.make} car"
   }
