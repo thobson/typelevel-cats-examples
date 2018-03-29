@@ -58,3 +58,11 @@ An example of form style validation can be found [here](src/main/scala/uk/co/tob
 
 Check out the supporting blog post [here](https://www.tobyhobson.co.uk/applicatives-vs-monads/)
 
+#### Validated and ValidatedNel
+
+`Either` doesn't really work when we want to accumulate errors. I explain why in my [blog post](https://www.tobyhobson.co.uk/cats-validated/). 
+Validated is a much better option - it's usage alongside `Applicative` is almost identical to `Either`
+
+Find an example [here](src/main/scala/uk/co/tobyhobson/ValidatedNels.scala)
+
+The supporting blog post can be found [here](https://www.tobyhobson.co.uk/cats-validated/)
