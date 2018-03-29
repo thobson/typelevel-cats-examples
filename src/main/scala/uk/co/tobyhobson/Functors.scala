@@ -1,24 +1,21 @@
 package uk.co.tobyhobson
 
-import scala.concurrent.Await
+import cats.Functor
+import cats.data.Nested
+import cats.instances.future._
+import cats.instances.list._
+import cats.instances.option._
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{Await, Future}
+import scala.concurrent.duration._
+import scala.languageFeature.higherKinds._
 
 /**
   * Examples illustrating the use of Functors from the Cats library.
   * see https://www.tobyhobson.co.uk/scala-cats-functor/
   */
 object Functors {
-
-  import scala.languageFeature.higherKinds._
-  import scala.concurrent.Future
-  import scala.concurrent.duration._
-  import cats.Functor
-  import cats.data.Nested
-  import cats.instances.future._
-  import cats.instances.list._
-  import cats.instances.option._
-  import cats.syntax.functor._
-
-  import scala.concurrent.ExecutionContext.Implicits.global
 
   case class LineItem(price: Double)
 

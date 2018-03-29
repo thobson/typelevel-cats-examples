@@ -12,9 +12,15 @@ import scala.concurrent.ExecutionContext.Implicits.global
   */
 object ApplicativeFutures {
 
-  def fetchFirstName: Future[String] = { println("fetching first name"); Future.successful("John") }
+  def fetchFirstName: Future[String] = {
+    println("fetching first name")
+    Future.successful("John")
+  }
 
-  def fetchLastName: Future[String] = { println("fetching last name"); Future.successful("Doe") }
+  def fetchLastName: Future[String] = {
+    println("fetching last name")
+    Future.successful("Doe")
+  }
 
   def main(args: Array[String]): Unit = {
     val eventualFullName = Applicative[Future].map2(fetchFirstName, fetchLastName) (_ + " " + _)
