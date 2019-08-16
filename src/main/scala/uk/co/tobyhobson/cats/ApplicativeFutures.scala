@@ -1,10 +1,11 @@
-package uk.co.tobyhobson
+package uk.co.tobyhobson.cats
 
 import cats.Applicative
 import cats.instances.future._
+
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
-import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
   * Illustrates using Applicatives to perform N operations independently and concurrently

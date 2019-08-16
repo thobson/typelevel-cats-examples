@@ -1,4 +1,4 @@
-package uk.co.tobyhobson
+package uk.co.tobyhobson.cats
 
 import cats.Functor
 import cats.data.Nested
@@ -7,8 +7,8 @@ import cats.instances.list._
 import cats.instances.option._
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
+import scala.concurrent.{Await, Future}
 import scala.languageFeature.higherKinds._
 
 /**
@@ -54,28 +54,6 @@ object Functors {
     def nestedMap[B](op: A => B): F[G[B]] = Functor[F].compose[G].map(underlying)(op)
   }
 
-  def main(args: Array[String]): Unit = {
-    // Pass List to withVat
-    val lineItemsList = List(LineItem(10.0), LineItem(20.0))
-    withFunctor(lineItemsList, applyVat).foreach(println)
-
-    // Pass an Option
-    val maybeLineItem: Option[LineItem] = Some(LineItem(10))
-    withFunctor(maybeLineItem, applyVat).foreach(println)
-
-    // Compose Future & Option
-    val eventualLineItem: Future[Option[LineItem]] = Future.successful { Some(LineItem(10)) }
-    val eventualResult = Functor[Future].compose[Option].map(eventualLineItem)(applyVat)
-    Await.result(eventualResult, 1.second).foreach(println)
-
-    // Using the nestedMap function
-    val eventualResultNestedMap = eventualLineItem.nestedMap(applyVat)
-    Await.result(eventualResultNestedMap, 1.second).foreach(println)
-
-    // WARNING - Advanced stuff here!
-    advancedOps()
-  }
-
   /**
     * More advanced usage which requires some hacks to get things in the correct
     * shape for the compiler. This is a downside to Scala's strong type safety,
@@ -113,6 +91,34 @@ object Functors {
     // custom type on the fly instead of needing the NestedFutureOption type
     val eventualResultNested2 = withFunctor[LineItem, LineItem, Nested[Future, Option, ?]](nested, applyVat).value
     Await.result(eventualResultNested2, 1.second).foreach(println)
+  }
+
+  def addVat[F[_]: Functor](lineItem: F[LineItem]): F[LineItem] = Functor[F].map(lineItem)(applyVat)
+
+  def main(args: Array[String]): Unit = {
+    // Pass List to withVat
+    val lineItemsList = List(LineItem(10.0), LineItem(20.0))
+    withFunctor(lineItemsList, applyVat).foreach(println)
+
+    // Pass an Option
+    val maybeLineItem: Option[LineItem] = Some(LineItem(10))
+    withFunctor(maybeLineItem, applyVat).foreach(println)
+
+    // Compose Future & Option
+    val eventualLineItem: Future[Option[LineItem]] = Future.successful { Some(LineItem(10)) }
+    val eventualResult = Functor[Future].compose[Option].map(eventualLineItem)(applyVat)
+    Await.result(eventualResult, 1.second).foreach(println)
+
+    // Using the nestedMap function
+    val eventualResultNestedMap = eventualLineItem.nestedMap(applyVat)
+    Await.result(eventualResultNestedMap, 1.second).foreach(println)
+
+    // WARNING - Advanced stuff here!
+    advancedOps()
+
+    import cats.Id
+    val withVat = addVat(LineItem(10): Id[LineItem])
+    println(withVat)
   }
 
 }

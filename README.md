@@ -1,9 +1,9 @@
 ## Code samples
 
-My [blog](https://www.tobyhobson.co.uk/) covers various Scala related topics mostly around functional programming. 
+My [blog](https://www.tobyhobson.com/) covers various Scala related topics mostly around functional programming. 
 Here are some code examples illustrating the ideas I describe in my blog. Check out my blog to find out more:
 
-**[www.tobyhobson.co.uk](https://www.tobyhobson.co.uk/)**
+**[www.tobyhobson.com](https://www.tobyhobson.com/)**
 
 #### Typeclasses
 
@@ -13,7 +13,7 @@ use type classes in your own applications. Type classes are borrowed from Haskel
 
 Examples illustrating why type classes are so powerful can be found [here](src/main/scala/uk/co/tobyhobson/Typeclasses.scala)
 
-Check out the supporting blog [post](https://www.tobyhobson.co.uk/type-classes-for-beginners/)
+Check out the supporting blog [post](https://www.tobyhobson.com/type-classes-for-beginners/)
 
 #### Functors
 
@@ -21,9 +21,9 @@ You're probably familiar with the map method in the Scala standard library. Coll
 method but unfortunately there's no base class for mappable types, making it hard to write generic code. 
 Fortunately [Cats](https://typelevel.org/cats/) includes a type class and various implementations which gives us this "base type"
 
-Examples of Functors including composition can be found [here](src/main/scala/uk/co/tobyhobson/Functors.scala)
+Examples of Functors including composition can be found [here](src/main/scala/uk/co/tobyhobson/cats/Functors.scala)
 
-Check out the supporting blog [post](https://www.tobyhobson.co.uk/scala-cats-functor/)
+Check out the supporting blog [post](https://www.tobyhobson.com/scala-cats-functor/)
 
 #### Monads and Monad transformers
 
@@ -31,10 +31,10 @@ Functors compose, so long as we only use `map()` we can compose any combination 
 Monads (types with `flatMap()`) don't necessarily compose without an additional data type known as a *monad transformer*
 
 Examples of monad transformers (OptionT and EitherT) including workarounds for variance issues can be found 
-[here](src/main/scala/uk/co/tobyhobson/MonadTransformers.scala)
+[here](src/main/scala/uk/co/tobyhobson/cats/MonadTransformers.scala)
 
-Check out the supporting blog posts [here](https://www.tobyhobson.co.uk/what-is-a-monad/) 
-and [here](https://www.tobyhobson.co.uk/scala-monad-transformers/)
+Check out the supporting blog posts [here](https://www.tobyhobson.com/what-is-a-monad/) 
+and [here](https://www.tobyhobson.com/scala-monad-transformers/)
 
 #### MonadError
 
@@ -42,9 +42,9 @@ We can use a MonadTransformer to wrap `Future[Either[L, R]]` then map the left a
 the underlying future fails? `MonadError` allows us to map the left projection if the underlying future holds a 
 Left **or** the future fails
 
-An example of MonadError usage can be found [here](src/main/scala/uk/co/tobyhobson/MonadErrors.scala)
+An example of MonadError usage can be found [here](src/main/scala/uk/co/tobyhobson/cats/MonadErrors.scala)
 
-Check out the supporting blog post [here](https://www.tobyhobson.co.uk/monad-error/)
+Check out the supporting blog post [here](https://www.tobyhobson.com/monad-error/)
 
 #### Applicatives
 
@@ -52,17 +52,17 @@ Check out the supporting blog post [here](https://www.tobyhobson.co.uk/monad-err
 for comprehension to perform multiple independent operations but this is not what Monad's are designed for. `Applicatives`
 are the go to tool for performing **multiple independent** operations.
 
-See an example of calling multiple external services in parallel using Applicatives [here](src/main/scala/uk/co/tobyhobson/ApplicativeFutures.scala)
+See an example of calling multiple external services in parallel using Applicatives [here](src/main/scala/uk/co/tobyhobson/cats/ApplicativeFutures.scala)
 
-An example of form style validation can be found [here](src/main/scala/uk/co/tobyhobson/ApplicativeValidation.scala)
+An example of form style validation can be found [here](src/main/scala/uk/co/tobyhobson/cats/ApplicativeValidation.scala)
 
-Check out the supporting blog post [here](https://www.tobyhobson.co.uk/applicatives-vs-monads/)
+Check out the supporting blog post [here](https://www.tobyhobson.com/applicatives-vs-monads/)
 
 #### Validated and ValidatedNel
 
-`Either` doesn't really work when we want to accumulate errors. I explain why in my [blog post](https://www.tobyhobson.co.uk/cats-validated/). 
+`Either` doesn't really work when we want to accumulate errors. I explain why in my [blog post](https://www.tobyhobson.com/cats-validated/). 
 Validated is a much better option - it's usage alongside `Applicative` is almost identical to `Either`
 
-Find an example [here](src/main/scala/uk/co/tobyhobson/ValidatedNels.scala)
+Find an example [here](src/main/scala/uk/co/tobyhobson/cats/ValidatedNels.scala)
 
-The supporting blog post can be found [here](https://www.tobyhobson.co.uk/cats-validated/)
+The supporting blog post can be found [here](https://www.tobyhobson.com/cats-validated/)

@@ -1,13 +1,13 @@
-package uk.co.tobyhobson
+package uk.co.tobyhobson.cats
 
-import scala.concurrent.{Await, Future}
-import cats.syntax.option._
-import cats.syntax.either._
 import cats.data.{EitherT, OptionT}
 import cats.instances.future._
+import cats.syntax.either._
+import cats.syntax.option._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
+import scala.concurrent.{Await, Future}
 
 /**
   * Examples of Monad Transformers

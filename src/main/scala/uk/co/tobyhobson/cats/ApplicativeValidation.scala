@@ -1,4 +1,4 @@
-package uk.co.tobyhobson
+package uk.co.tobyhobson.cats
 
 import cats.Applicative
 import cats.data.Validated

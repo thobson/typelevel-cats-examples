@@ -1,13 +1,13 @@
-package uk.co.tobyhobson
+package uk.co.tobyhobson.cats
 
 import cats.MonadError
 import cats.data.EitherT
-
-import scala.concurrent.{Await, Future}
-import cats.syntax.either._
-import scala.concurrent.ExecutionContext.Implicits.global
 import cats.instances.future._
+import cats.syntax.either._
+
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
+import scala.concurrent.{Await, Future}
 
 /**
   * Example showing how to use MonadError
