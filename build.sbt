@@ -11,7 +11,6 @@ lazy val root = (project in file(".")).
     scalacOptions ++= Seq("-feature", "-language:higherKinds"),
     libraryDependencies ++= Seq(
       cats,
-      shapeless,
       scalaTest % Test,
       compilerPlugin("org.spire-math" %% "kind-projector" % "0.9.6")
     )
