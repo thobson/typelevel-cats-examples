@@ -1,4 +1,4 @@
-package uk.co.tobyhobson.shapeless
+package uk.co.tobyhobson.shapeless.copying
 
 import java.time.LocalDate
 

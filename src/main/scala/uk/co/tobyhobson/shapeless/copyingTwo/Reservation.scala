@@ -1,4 +1,4 @@
-package uk.co.tobyhobson.shapeless
+package uk.co.tobyhobson.shapeless.copyingTwo
 
 import java.time.LocalDate
 
@@ -12,5 +12,5 @@ case class Reservation(
   numDoors: Int,
   driverAge: Int,
   nationality: String,
-  reservationConfirmed: Boolean
+  confirmed: Boolean
 )
