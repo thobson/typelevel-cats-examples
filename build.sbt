@@ -4,14 +4,16 @@ lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
       organization := "uk.tobyhobson",
-      scalaVersion := "2.12.8",
+      scalaVersion := "2.13.1",
       version      := "1.0-SNAPSHOT"
     )),
     name := "blog-samples",
-    scalacOptions ++= Seq("-feature", "-language:higherKinds"),
+    scalacOptions ++= Seq("-feature", "-language:higherKinds", "-deprecation"),
     libraryDependencies ++= Seq(
       cats,
+      monix,
       scalaTest % Test,
-      compilerPlugin("org.spire-math" %% "kind-projector" % "0.9.6")
     )
   )
+
+addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.0" cross CrossVersion.full)

@@ -1,6 +1,7 @@
 import sbt._
 
 object Dependencies {
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.0.8"
-  lazy val cats = "org.typelevel" %% "cats-core" % "1.6.1"
+  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.2.0-M2"
+  lazy val cats = "org.typelevel" %% "cats-core" % "2.1.0"
+  lazy val monix = "io.monix" %% "monix" % "3.1.0"
 }

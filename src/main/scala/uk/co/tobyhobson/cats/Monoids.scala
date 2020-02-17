@@ -37,10 +37,10 @@ object Monoids {
     println(combinedWithCustomMonoid)
 
     import cats.instances.long._
-    val combinedLongs = combineAnything(Seq(1l, 2l))
+    val combinedLongs = combineAnything(Seq(1L, 2L))
     println(s"combined longs: $combinedLongs")
 
-    val mappedAndReduced = mapReduce(Seq(1l, 2l, 3l)) { _ * 2 }
+    val mappedAndReduced = mapReduce(Seq(1L, 2L, 3L)) { _ * 2 }
     println(s"map reduce output: $mappedAndReduced")
   }
 
