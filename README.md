@@ -1,6 +1,6 @@
 ## Cats Code samples
 
-My [blog](https://www.tobyhobson.com/) covers various Scala related topics mostly around functional programming. 
+My [blog](https://tobyhobson.com/) covers various Scala related topics mostly around functional programming. 
 Here are some code examples illustrating the ideas I describe in my blog. Check out my blog to find out more:
 
 **[tobyhobson.com](https://tobyhobson.com/)**
@@ -13,7 +13,7 @@ use type classes in your own applications. Type classes are borrowed from Haskel
 
 Examples illustrating why type classes are so powerful can be found [here](src/main/scala/uk/co/tobyhobson/Typeclasses.scala)
 
-Check out the supporting blog [post](https://www.tobyhobson.com/posts/cats/typeclasses/)
+Check out the supporting blog [post](https://tobyhobson.com/posts/cats/typeclasses/)
 
 #### Functors
 
@@ -23,7 +23,7 @@ Fortunately [Cats](https://typelevel.org/cats/) includes a type class and variou
 
 Examples of Functors including composition can be found [here](src/main/scala/uk/co/tobyhobson/cats/Functors.scala)
 
-Check out the supporting blog [post](https://www.tobyhobson.com/posts/cats/functors/)
+Check out the supporting blog [post](https://tobyhobson.com/posts/cats/functors/)
 
 #### Monads and Monad transformers
 
@@ -33,8 +33,8 @@ Monads (types with `flatMap()`) don't necessarily compose without an additional 
 Examples of monad transformers (OptionT and EitherT) including workarounds for variance issues can be found 
 [here](src/main/scala/uk/co/tobyhobson/cats/MonadTransformers.scala)
 
-Check out the supporting blog posts [here](https://www.tobyhobson.com/posts/cats/monoids/) 
-and [here](https://www.tobyhobson.com/posts/cats/monad-transformers/)
+Check out the supporting blog posts [here](https://tobyhobson.com/posts/cats/monoids/) 
+and [here](https://tobyhobson.com/posts/cats/monad-transformers/)
 
 #### MonadError
 
@@ -44,7 +44,7 @@ Left **or** the future fails
 
 An example of MonadError usage can be found [here](src/main/scala/uk/co/tobyhobson/cats/MonadErrors.scala)
 
-Check out the supporting blog post [here](https://www.tobyhobson.com/posts/cats/monad-error/)
+Check out the supporting blog post [here](https://tobyhobson.com/posts/cats/monad-error/)
 
 #### Applicatives
 
@@ -56,13 +56,13 @@ See an example of calling multiple external services in parallel using Applicati
 
 An example of form style validation can be found [here](src/main/scala/uk/co/tobyhobson/cats/ApplicativeValidation.scala)
 
-Check out the supporting blog post [here](https://www.tobyhobson.com/posts/cats/applicatives-vs-monads/)
+Check out the supporting blog post [here](https://tobyhobson.com/posts/cats/applicatives-vs-monads/)
 
 #### Validated and ValidatedNel
 
-`Either` doesn't really work when we want to accumulate errors. I explain why in my [blog post](https://www.tobyhobson.com/cats-validated/). 
+`Either` doesn't really work when we want to accumulate errors. I explain why in my [blog post](https://tobyhobson.com/cats-validated/). 
 Validated is a much better option - it's usage alongside `Applicative` is almost identical to `Either`
 
 Find an example [here](src/main/scala/uk/co/tobyhobson/cats/ValidatedNels.scala)
 
-The supporting blog post can be found [here](https://www.tobyhobson.com/posts/cats/validated/)
+The supporting blog post can be found [here](https://tobyhobson.com/posts/cats/validated/)
