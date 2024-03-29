@@ -3,7 +3,7 @@
 My [blog](https://www.tobyhobson.com/) covers various Scala related topics mostly around functional programming. 
 Here are some code examples illustrating the ideas I describe in my blog. Check out my blog to find out more:
 
-**[www.tobyhobson.com](https://www.tobyhobson.com/)**
+**[tobyhobson.com](https://tobyhobson.com/)**
 
 #### Typeclasses
 
